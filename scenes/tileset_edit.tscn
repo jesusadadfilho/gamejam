@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/imgs/tiles.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
+
+[node name="Mapa" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="grama" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 107, 33, 32, 32 )
+
+[node name="tile2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 140, 30, 30 )
+
+[node name="tile3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 73.3714, 164.491, 32.3318, 32.9305 )
+
+[node name="tile4" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 139.232, 164.491, 33.5293, 33.5293 )
+
+[node name="tile5" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 171.548, 31.8144, 34.6968, 34.6968 )
+
+[node name="nav" type="Sprite" parent="."]
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 206, 66, 32, 32 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="nav"]
+navpoly = SubResource( 1 )
+
+[node name="grama_ponta" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 106, 98, 34, 34 )
