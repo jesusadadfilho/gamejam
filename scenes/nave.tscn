@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/imgs/player/nave.png" type="Texture" id=2]
+[ext_resource path="res://assets/imgs/player/fogo_secundario.png" type="Texture" id=3]
+[ext_resource path="res://assets/imgs/player/fogo_primario.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="nave" type="KinematicBody2D"]
+z_index = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.05, 0.05 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="FogoSecEsc" type="Sprite" parent="."]
+visible = false
+position = Vector2( -15.3203, 31 )
+rotation = 3.14159
+scale = Vector2( 0.015, 0.01 )
+texture = ExtResource( 3 )
+
+[node name="FogoPrinc" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 32 )
+rotation = 3.14159
+scale = Vector2( 0.009, 0.009 )
+texture = ExtResource( 4 )
+
+[node name="FogoSecDir" type="Sprite" parent="."]
+visible = false
+position = Vector2( 15.2637, 31 )
+rotation = 3.14159
+scale = Vector2( 0.015, 0.01 )
+texture = ExtResource( 3 )

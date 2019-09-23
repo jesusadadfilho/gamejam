@@ -8,8 +8,9 @@ onready var chamaSecDir = get_node("FogoSecDir")
 
 
 func _physics_process(delta):
-	movimento.y += 10
-	print(movimento.x)
+	#movimento.y += 10
+
+	print(movimento.x * delta)
 	
 		
 	if Input.is_action_pressed("ui_up"):
@@ -65,7 +66,6 @@ func _physics_process(delta):
 	elif position.x >= 2000:
 		position.x = -110
 	
-	print(position)
 
 func _ready():
 	pass
