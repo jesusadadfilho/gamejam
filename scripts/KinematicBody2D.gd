@@ -37,11 +37,11 @@ func _physics_process(delta):
 			self.scale.x += 0.01
 			self.scale.y += 0.01
 	elif Input.is_action_pressed("ui_down"):
-		movimento.y = 100
-		chamaSecDir.show()
-		chamaSecEsc.show()
+		if self.scale.x == 1:
+			movimento.y = 100
+			chamaSecDir.show()
+			chamaSecEsc.show()
 	elif Input.is_action_pressed("aterisar"):
-		print("oi")
 		if self.scale.x > 0.6:
 			self.scale.x -= 0.01
 			self.scale.y -= 0.01
@@ -50,15 +50,15 @@ func _physics_process(delta):
 		chamaSecDir.hide()
 		chamaSecEsc.hide()
 		movimento.y = 0
-		
-		if Input.is_action_pressed("ui_right"):
-			movimento.x = 100
-			chamaSecEsc.show()
-		elif Input.is_action_pressed("ui_left"):
-			movimento.x = -100
-			chamaSecDir.show()
-		else:
-			movimento.x = 0
+		if self.scale.x == 1:
+			if Input.is_action_pressed("ui_right"):
+				movimento.x = 100
+				chamaSecEsc.show()
+			elif Input.is_action_pressed("ui_left"):
+				movimento.x = -100
+				chamaSecDir.show()
+			else:
+				movimento.x = 0
 			
 			
 	
