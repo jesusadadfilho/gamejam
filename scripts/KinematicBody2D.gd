@@ -10,7 +10,7 @@ onready var chamaSecDir = get_node("FogoSecDir")
 func _physics_process(delta):
 	#movimento.y += 10
 
-	print(movimento.x * delta)
+	#print(movimento.x * delta)
 	
 		
 	if Input.is_action_pressed("ui_up"):
@@ -41,6 +41,7 @@ func _physics_process(delta):
 		chamaSecDir.show()
 		chamaSecEsc.show()
 	elif Input.is_action_pressed("aterisar"):
+		print("oi")
 		if self.scale.x > 0.6:
 			self.scale.x -= 0.01
 			self.scale.y -= 0.01
