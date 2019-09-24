@@ -20,9 +20,11 @@ region_rect = Rect2( 107, 33, 32, 32 )
 
 [node name="tile2" type="Sprite" parent="."]
 visible = false
+position = Vector2( 0, 2.0906 )
+scale = Vector2( 1, 1.13937 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 100, 140, 30, 30 )
+region_rect = Rect2( 74, 166, 32, 32 )
 
 [node name="tile3" type="Sprite" parent="."]
 visible = false
@@ -53,6 +55,19 @@ region_rect = Rect2( 206, 66, 32, 32 )
 navpoly = SubResource( 1 )
 
 [node name="grama_ponta" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 106, 98, 34, 34 )
+
+[node name="agua" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 141, 231, 32, 32 )
+
+[node name="arvore" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 101, 65, 89 )

@@ -50,7 +50,7 @@ func set_direcao():
 	var inter = 2
 	if position.x > pos.x:
 		dir =  DIREITA
-	elif position.x < pos.x :
+	elif position.x < pos.x:
 		dir = ESQUERDA
 	elif position.y > pos.y:
 		dir = FRENTE

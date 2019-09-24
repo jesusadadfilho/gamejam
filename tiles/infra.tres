@@ -1,0 +1,65 @@
+[gd_resource type="TileSet" load_steps=2 format=2]
+
+[ext_resource path="res://assets/imgs/infra.png" type="Texture" id=1]
+
+[resource]
+0/name = "infra"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 756, 112, 76, 82 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 38, 41 )
+0/navigation_offset = Vector2( 38, 41 )
+0/shapes = [  ]
+0/z_index = 0
+1/name = "infra2"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 653, 583, 84, 86 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 42, 43 )
+1/navigation_offset = Vector2( 42, 43 )
+1/shapes = [  ]
+1/z_index = 0
+2/name = "infra3"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 1327, 541, 66, 52 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 33, 26 )
+2/navigation_offset = Vector2( 33, 26 )
+2/shapes = [  ]
+2/z_index = 0
+3/name = "infra4"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 1247, 383, 34, 48 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 17, 24 )
+3/navigation_offset = Vector2( 17, 24 )
+3/shapes = [  ]
+3/z_index = 0
+4/name = "infra5"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 1134, 270, 20, 46 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 10, 23 )
+4/navigation_offset = Vector2( 10, 23 )
+4/shapes = [  ]
+4/z_index = 0
+5/name = "poste-led"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 1134, 270, 20, 46 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 10, 23 )
+5/navigation_offset = Vector2( 10, 23 )
+5/shapes = [  ]
+5/z_index = 0
