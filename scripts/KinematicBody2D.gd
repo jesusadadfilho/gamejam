@@ -1,17 +1,20 @@
-extends KinematicBody2D
+		extends KinematicBody2D
 
 var movimento = Vector2()
 const UP = Vector2(0, -1)
 onready var chamaPrinc = get_node("FogoPrinc")
 onready var chamaSecEsc = get_node("FogoSecEsc")
 onready var chamaSecDir = get_node("FogoSecDir")
+var pousado =  false
+signal pousar
 
+func conectarPessoa(pessoa):
+	connect("pousar", pessoa, "avisarFuga", [position])
 
 func _physics_process(delta):
-	#movimento.y += 10
-
-	print(movimento.x * delta)
 	
+	if pousado:
+		emit_signal("pousar")
 		
 	if Input.is_action_pressed("ui_up"):
 		if self.scale.x == 1:
@@ -44,6 +47,8 @@ func _physics_process(delta):
 		if self.scale.x > 0.6:
 			self.scale.x -= 0.01
 			self.scale.y -= 0.01
+		else:
+			pousado = true
 	else:
 		chamaPrinc.hide()
 		chamaSecDir.hide()
