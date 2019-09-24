@@ -1,23 +1,77 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/imgs/menu/background.png" type="Texture" id=1]
-[ext_resource path="res://assets/imgs/menu/Resume.png" type="Texture" id=2]
+[ext_resource path="res://scripts/menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/imgs/menu/play.png" type="Texture" id=2]
 [ext_resource path="res://assets/imgs/menu/Close_red.png" type="Texture" id=3]
+[ext_resource path="res://assets/imgs/menu/Resume.png" type="Texture" id=4]
+[ext_resource path="res://assets/imgs/menu/label.png" type="Texture" id=5]
+[ext_resource path="res://assets/audios/musica_fundo.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/imgs/menu/background.png" type="Texture" id=7]
 
 [node name="menu" type="Node2D"]
+script = ExtResource( 1 )
 
-[node name="canvas" type="CanvasLayer" parent="."]
+[node name="play_game" type="Node2D" parent="."]
+scale = Vector2( 0.4, 0.4 )
+z_index = 1
 
-[node name="bg" type="Sprite" parent="canvas"]
+[node name="Button" type="Button" parent="play_game"]
+margin_left = 1039.94
+margin_top = 1234.33
+margin_right = 1562.94
+margin_bottom = 1422.33
+icon = ExtResource( 2 )
+flat = true
+
+[node name="audio" type="Button" parent="."]
+visible = false
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="pausar" type="Node2D" parent="."]
+editor/display_folded = true
+scale = Vector2( 0.6, 0.6 )
+z_index = 1
+
+[node name="pausar" type="Button" parent="pausar"]
+margin_left = 1404.31
+margin_top = 855.91
+margin_right = 1516.31
+margin_bottom = 963.91
+icon = ExtResource( 3 )
+flat = true
+
+[node name="play" type="Node2D" parent="."]
+editor/display_folded = true
+scale = Vector2( 0.48, 0.48 )
+z_index = 1
+
+[node name="play" type="Button" parent="play"]
+margin_left = 1920.82
+margin_top = 1066.79
+margin_right = 2058.82
+margin_bottom = 1198.79
+icon = ExtResource( 4 )
+flat = true
+
+[node name="titulo" type="Node2D" parent="."]
+z_index = 3
+
+[node name="label" type="Sprite" parent="titulo"]
+position = Vector2( 505.31, 108.558 )
+scale = Vector2( 1.22616, 1.82411 )
+z_index = 10
+texture = ExtResource( 5 )
+
+[node name="choice" type="AudioStreamPlayer" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="bg" type="Sprite" parent="."]
 position = Vector2( 548.717, 265.059 )
 scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 1 )
-
-[node name="play" type="TouchScreenButton" parent="canvas"]
-position = Vector2( 564.438, 277 )
-normal = ExtResource( 2 )
-
-[node name="exit" type="TouchScreenButton" parent="canvas"]
-position = Vector2( 342.083, 277 )
-scale = Vector2( 1.3, 1.3 )
-normal = ExtResource( 3 )
+texture = ExtResource( 7 )
+[connection signal="pressed" from="play_game/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="pausar/pausar" to="." method="_on_pausar_pressed"]
+[connection signal="pressed" from="play/play" to="." method="_on_play_pressed"]
