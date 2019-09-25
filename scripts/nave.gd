@@ -5,6 +5,7 @@ const UP = Vector2(0, -1)
 onready var chamaPrinc = get_node("FogoPrinc")
 onready var chamaSecEsc = get_node("FogoSecEsc")
 onready var chamaSecDir = get_node("FogoSecDir")
+onready var animateNav = get_node("AnimationPlayer")
 var pousado =  false
 signal pousar
 
@@ -12,12 +13,6 @@ func conectarPessoa(pessoa):
 	connect("pousar", pessoa, "avisarFuga", [position])
 
 func _physics_process(delta):
-<<<<<<< HEAD
-=======
-	#movimento.y += 10
-
-	#print(movimento.x * delta)
->>>>>>> master
 	
 	if pousado:
 		emit_signal("pousar")
@@ -42,20 +37,19 @@ func _physics_process(delta):
 			else:
 				chamaSecDir.hide()
 				chamaSecEsc.hide()
-		else:
-			self.scale.x += 0.01
-			self.scale.y += 0.01
 	elif Input.is_action_pressed("ui_down"):
 		if self.scale.x == 1:
 			movimento.y = 100
 			chamaSecDir.show()
 			chamaSecEsc.show()
-	elif Input.is_action_pressed("aterisar"):
-		if self.scale.x > 0.6:
-			self.scale.x -= 0.01
-			self.scale.y -= 0.01
-		else:
+	elif Input.is_action_just_pressed("aterisar"):
+		if self.scale.x == 1:
+			animateNav.play("aterisar")
 			pousado = true
+		else:
+			animateNav.play("decolar")
+			pousado = false
+			
 	else:
 		chamaPrinc.hide()
 		chamaSecDir.hide()
@@ -83,10 +77,6 @@ func _physics_process(delta):
 	
 	movimento = move_and_slide(movimento, UP)
 	
-	if position.x <= -110:
-		position.x = 2000
-	elif position.x >= 2000:
-		position.x = -110
 	
 
 func _ready():
