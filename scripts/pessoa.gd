@@ -105,8 +105,7 @@ func morrer():
 	$timeMorrer.start()
 	
 
-func avisarFuga(param):
-	self.goal = Vector2(param[0], param[1])
+func avisarFuga():
 	fugir =  true
 
 func _on_timeMorrer_timeout():

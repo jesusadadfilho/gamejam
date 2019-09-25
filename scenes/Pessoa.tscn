@@ -163,12 +163,12 @@ __meta__ = {
 [node name="sangue" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, 5 )
-scale = Vector2( 0.35, 0.35 )
+scale = Vector2( 0.128571, 0.128571 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.890469, -8 )
-scale = Vector2( 0.8, 0.79 )
+scale = Vector2( 0.8, 0.791599 )
 texture = ExtResource( 3 )
 vframes = 21
 hframes = 6
