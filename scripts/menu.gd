@@ -7,6 +7,7 @@ var next_scene = preload("res://scenes/level1.tscn")
 
 func _ready():
 	$music.play()
+	$titulo/AnimationPlayer.play("logo")
 
 func _on_play_pressed():
 	get_node("music").play()

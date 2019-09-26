@@ -4,19 +4,18 @@
 [ext_resource path="res://assets/imgs/infra.png" type="Texture" id=2]
 [ext_resource path="res://assets/imgs/itens/roda.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.3982, 19.9797 )
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=3]
 
-[sub_resource type="ShaderMaterial" id=2]
-next_pass = SubResource( 4 )
-shader = SubResource( 1 )
+[sub_resource type="ShaderMaterial" id=4]
+next_pass = SubResource( 2 )
+shader = SubResource( 3 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "default"
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -51,10 +50,10 @@ script = ExtResource( 1 )
 position = Vector2( 1.32037, 5.72164 )
 rotation = -1.57694
 scale = Vector2( 1, 1.45454 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 4 )
 texture = ExtResource( 2 )
 flip_h = true
 region_enabled = true
@@ -65,18 +64,16 @@ __meta__ = {
 
 [node name="front" type="Sprite" parent="Sprite"]
 position = Vector2( -20.067, 22 )
-rotation = -4.50977
 scale = Vector2( 0.0515493, 0.047794 )
 texture = ExtResource( 3 )
 flip_h = true
 
 [node name="back" type="Sprite" parent="Sprite"]
 position = Vector2( 22, 22 )
-rotation = -4.50977
 scale = Vector2( 0.0515493, 0.047794 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "default"
-anims/default = SubResource( 3 )
+anims/default = SubResource( 5 )
 [connection signal="body_entered" from="." to="." method="_on_carro_body_entered"]
