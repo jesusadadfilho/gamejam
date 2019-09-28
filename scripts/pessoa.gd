@@ -15,18 +15,40 @@ const ESQUERDA  = 2
 const DIREITA = 3
 
 const NEGAO = 1
+const BRUGUELO = 2
+const VELHO = 3
+const MULHER = 4
+
+signal morrir
+
 
 var fugir = false
 var morto =  false
 
 func _ready():
+	randomize()
 	pos  = position
-	sprite.texture =  get_sprite_categoria()
+	setCategoria()
 	set_physics_process(true)
+
+func setCategoria():
+	var pessoa = int(rand_range(1,5))	
+	if pessoa == NEGAO:
+		speed = rand_range(40,50)
+		set_sprite_categoria("negao")
+	elif pessoa == BRUGUELO:
+		speed = rand_range(20,30)
+		set_sprite_categoria("menino")
+	elif pessoa == VELHO:
+		speed = rand_range(10,20)
+		set_sprite_categoria("velho")
+	elif pessoa == MULHER:
+		speed = rand_range(20,30)
+		set_sprite_categoria("mulher")
 	
-func get_sprite_categoria():
-	var textura = load("res://assets/imgs/pessoas/negao/negao.png")
-	return textura
+func set_sprite_categoria(cat):
+	var textura = load("res://assets/imgs/pessoas/%s.png" % cat)
+	sprite.texture = textura
 
 func _physics_process(delta):
 	if (fugir and not morto):
@@ -99,9 +121,13 @@ func mover(delta):
 
 func morrer():
 	morto  = true
-	remove_child($CollisionShape2D)
 	$AnimationPlayer.play("morrer")
+	remove_child($CollisionShape2D)
 	$timeMorrer.start()
+	emit_signal("morrir")
+
+func conectarObject(object):
+	connect("morrir", object, "removePessoa")
 	
 
 func avisarFuga():

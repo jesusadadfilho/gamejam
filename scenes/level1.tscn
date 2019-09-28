@@ -12,6 +12,7 @@ position = Vector2( 493.169, 294.532 )
 script = ExtResource( 1 )
 
 [node name="nav" type="Navigation2D" parent="."]
+editor/display_folded = true
 
 [node name="map" type="TileMap" parent="nav"]
 position = Vector2( 0, 10 )
@@ -35,7 +36,11 @@ z_index = 10
 editor/display_folded = true
 
 [node name="carro" parent="itens" instance=ExtResource( 4 )]
-position = Vector2( 45.2781, 78.9479 )
+position = Vector2( 47.0276, 75.4489 )
+
+[node name="carro2" parent="itens" instance=ExtResource( 4 )]
+position = Vector2( 1032.01, 491.838 )
+direction = -1
 
 [node name="teste" type="Sprite" parent="."]
 visible = false
@@ -50,5 +55,7 @@ position = Vector2( 528.576, 101.312 )
 [node name="center" type="Position2D" parent="."]
 position = Vector2( -20.271, -36.0546 )
 z_index = 1
+
+[node name="tempo" type="Timer" parent="."]
 [connection signal="timeout" from="mob_time" to="." method="_on_mob_time_timeout"]
 [connection signal="pousar" from="nave" to="." method="_on_nave_pousar"]

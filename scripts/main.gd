@@ -1,16 +1,18 @@
 extends Node2D
 
 signal uptdate_map
-
 onready var pessoa  = preload("res://scenes/pessoa.tscn")
 onready var nav = $nav
 onready var map = $nav/map
 var pessoas = []
+var avisarfuga =  false
+
 
 func _ready():
 	randomize()
 	gerarPessoasMapa()
 	set_process_input(true)
+	set_process(true)
 	
 func gerarPessoasMapa():
 	var ponto = $center
@@ -22,9 +24,12 @@ func gerarPessoasMapa():
 		pessoas.append(m)
 		add_child(m)
 		m.setAnimDirection()
-		
 
 func _on_nave_pousar(nave):
-	for pes in pessoas:
-		pes.goal =  nave.position
-		pes.avisarFuga()
+	if not pessoas.empty():
+		for pes in pessoas:
+			pes. goal =  $nave.position
+			pes.avisarFuga()
+	
+func removePessoa():
+	self.pessoas

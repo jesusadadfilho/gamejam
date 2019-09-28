@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/negao.png-3ed9e595c66c5cdc62055fef4cdfe18c.stex"
+path="res://.import/velho.png-58b6f7b90dc628d21fc155d4109d596a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imgs/pessoas/negao/negao.png"
-dest_files=[ "res://.import/negao.png-3ed9e595c66c5cdc62055fef4cdfe18c.stex" ]
+source_file="res://assets/imgs/pessoas/velho.png"
+dest_files=[ "res://.import/velho.png-58b6f7b90dc628d21fc155d4109d596a.stex" ]
 
 [params]
 
