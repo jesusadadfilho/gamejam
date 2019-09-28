@@ -45,12 +45,11 @@ func _physics_process(delta):
 
 func set_nav(new_nav):
 	nav = new_nav
-	update_path()
 
 func update_path():
 	path = nav.get_simple_path(position, goal, false)
 	if path.size() == 0:
-		pass
+		queue_free()
 		
 
 func set_direcao():
@@ -106,6 +105,7 @@ func morrer():
 	
 
 func avisarFuga():
+	update_path()
 	fugir =  true
 
 func _on_timeMorrer_timeout():
