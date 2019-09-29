@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/nave.gd" type="Script" id=1]
-[ext_resource path="res://assets/imgs/naves.png" type="Texture" id=2]
+[ext_resource path="res://assets/imgs/nave.png" type="Texture" id=2]
 [ext_resource path="res://assets/audios/helicopter (mp3cut.net).wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -46,7 +46,6 @@ scale = Vector2( 0.3, 0.3 )
 z_index = 1
 texture = ExtResource( 2 )
 flip_h = true
-region_enabled = true
 region_rect = Rect2( -0.5, 447.25, 351, 153 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

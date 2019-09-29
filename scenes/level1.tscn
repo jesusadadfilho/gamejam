@@ -18,7 +18,6 @@ position = Vector2( 493.169, 294.532 )
 script = ExtResource( 1 )
 
 [node name="nav" type="Navigation2D" parent="."]
-editor/display_folded = true
 
 [node name="map" type="TileMap" parent="nav"]
 position = Vector2( 0, 10 )

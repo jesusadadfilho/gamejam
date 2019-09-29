@@ -21,6 +21,7 @@ const MULHER = 4
 
 signal morrir
 
+var pontuacaoTotal = 0
 
 var fugir = false
 var morto =  false
@@ -60,6 +61,8 @@ func _physics_process(delta):
 			else:
 				path.remove(0)
 		else:
+			pontuacaoTotal += 1
+			print(pontuacaoTotal)
 			queue_free()
 	else:
 		mover(delta)
