@@ -75,7 +75,7 @@ tracks/0/keys = {
 "values": [ 60, 61, 62, 63, 65, 65 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "morrer"
 length = 2.0
 tracks/0/type = "value"
@@ -115,8 +115,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.3, 0.3 ), Vector2( 0.35, 0.35 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "parado"
+[sub_resource type="Animation" id=7]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -145,7 +144,7 @@ tracks/1/keys = {
 }
 
 [node name="Pessoa" type="KinematicBody2D"]
-position = Vector2( -8.00369, -6.77941 )
+position = Vector2( -6.55394, -6.77941 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -154,7 +153,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.02169, -1.36225 )
-scale = Vector2( 0.6, 1.08 )
+scale = Vector2( 2, 3 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -168,20 +167,20 @@ scale = Vector2( 0.128571, 0.128571 )
 texture = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.890469, -8 )
-scale = Vector2( 0.8, 0.798409 )
+position = Vector2( 0.352174, -12.7635 )
+scale = Vector2( 0.994163, 1.49092 )
 texture = ExtResource( 3 )
 vframes = 21
 hframes = 6
-frame = 64
+frame = 51
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/costa = SubResource( 2 )
 anims/direita = SubResource( 3 )
 anims/esquerda = SubResource( 4 )
 anims/front = SubResource( 5 )
-anims/morrer = SubResource( 7 )
-anims/parado = SubResource( 6 )
+anims/morrer = SubResource( 6 )
+anims/parado = SubResource( 7 )
 
 [node name="time" type="Timer" parent="."]
 wait_time = 2.0

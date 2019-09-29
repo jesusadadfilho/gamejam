@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://tiles/teste.tres" type="TileSet" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://scenes/carro.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/imgs/itens/roda.png" type="Texture" id=5]
 [ext_resource path="res://scenes/poste.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/font.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+use_mipmaps = true
+font_data = ExtResource( 7 )
 
 [node name="main" type="Node2D"]
 position = Vector2( 493.169, 294.532 )
@@ -29,7 +35,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="nave" parent="." instance=ExtResource( 3 )]
-position = Vector2( -175.079, -217.951 )
+position = Vector2( -181.079, -215.951 )
 z_index = 10
 
 [node name="itens" type="Node" parent="."]
@@ -48,6 +54,7 @@ position = Vector2( 355.469, -228.691 )
 texture = ExtResource( 5 )
 
 [node name="postes" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Poste" parent="postes" instance=ExtResource( 6 )]
 position = Vector2( 528.576, 101.312 )
@@ -57,5 +64,21 @@ position = Vector2( -20.271, -36.0546 )
 z_index = 1
 
 [node name="tempo" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+margin_left = 566.885
+margin_top = -497.29
+margin_right = 606.885
+margin_bottom = -457.29
+
+[node name="label_count" type="Label" parent="Control"]
+anchor_right = 0.48
+margin_left = -986.387
+margin_top = 609.788
+margin_right = -915.587
+margin_bottom = 729.788
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
 [connection signal="timeout" from="mob_time" to="." method="_on_mob_time_timeout"]
 [connection signal="pousar" from="nave" to="." method="_on_nave_pousar"]
